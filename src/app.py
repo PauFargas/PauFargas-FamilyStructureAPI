@@ -62,16 +62,16 @@ def handle_member(id_member):
             response_body['message'] = 'Found'
             response_body['results'] = member
             return response_body, 200
-        response_body['message'] = 'Not Found'
+        response_body['message'] = 'This member was not found'
         response_body['results'] = []  
         return response_body, 400
     if request.method == 'DELETE':
         member = jackson_family.delete_member(id_member)
         if member:
-            response_body['message'] = 'Deleted'
+            response_body['message'] = 'Member d-eleted'
             response_body['results'] = member
             return response_body, 200
-        response_body['message'] = 'Not Found'
+        response_body['message'] = 'This member was not found'
         response_body['results'] = []  
         return response_body, 400
     if request.method == 'PUT':
